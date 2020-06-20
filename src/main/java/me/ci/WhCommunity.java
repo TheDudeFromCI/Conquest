@@ -307,12 +307,6 @@ public class WhCommunity extends JavaPlugin
 							Bukkit.shutdown();
 						}
 						loops++;
-						if (System.currentTimeMillis() >= 1373925600000L)
-						{
-							Bukkit.setWhitelist(false);
-							System.out.println("WATCH OUT!!!!!!!!!!! WE'RE OPEN!");
-							System.out.println("NOOB FEST!");
-						}
 					}
 				}, 10, 10);
 		final File wikifolder = Save.getAbsoluteFile("Resources", "Wiki");
