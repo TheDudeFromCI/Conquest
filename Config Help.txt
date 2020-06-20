@@ -1,0 +1,29 @@
+Fire_Spread						- If set to true, then fire is allowed to spread in the wilderness.
+Pvp.Global						- If set to true, pvp in affects worlds is always on, overrides 'Player_Can_Toggle'.
+Pvp.Player_Can_Toggle			- If set to true, then players are allowed to toggle their own pvp of or off.
+Pvp.Toggle_Cooldown				- How long a player must wait before they are allowed to toggle their pvp again. (Seconds)
+Always_Day						- If set to true, then the time is locked to always stay daytime. Uses a timer-reset method to avoid tick delay.
+Building_In_Wild				- If set to true, then players are allowed to build in unowned areas of the map.
+Plot_Barrier_Liquid_Flow		- If true, creates invisable barriers around plots to stop liquid from flowing from one plot into another plot.
+Plot_Cost						- How much it would cost a player to buy a plot.
+Explosions						- Allow explosions on the map or not.
+Spawn_Mobs.Naturally.Hostile	- Allow hostile mobs to spawn or not under normal minecraft conditions.
+Spawn_Mobs.Naturally.Peaceful	- Allow peaceful mobs to spawn or not under normal minecraft conditions.
+Spawn_Mobs.Plugin				- Allow mobs to spawn or not when spawned by plugins.
+Max_Plots						- Sets the max number of plots a player is allowed to buy. Put -1 for infinite plots.
+Plot_Rent						- Sets the amount of money taken from players when they rent a plot or are taxed.
+Tax_Cooldown					- Sets the number of minutes a player must wait before they can tax a rented plot again.
+Plots							- Sets if plots are enabled or not.
+Chat:
+	%pgroup% = The player's permissions group.
+	%player% = The player's real name.
+	%nick% = The player's nick/display name.
+	%sender% = The player sending the message. Only applies to messages.
+	%receiver% = The player receiving the message. Only applies to messages.
+	%world% = The player's current world.
+	%money% = The player's current money.
+	%channel% = The player's current channel.
+	%biome% = The biome the player is standing in.
+	%prefix% = The player's prefix.
+	%suffix% = The player's suffix.
+Local Chat						- If set to true, all worlds have their own chat systems and cannot talk to other players outside of that world. If set to false, everyone can talk to everyone and range does not apply. Per world message layouts will still apply however.
