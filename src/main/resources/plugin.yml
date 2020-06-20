@@ -1,40 +1,40 @@
 name: WhCommunity
 main: me.ci.WhCommunity
 author: TheDudeFromCI
-version: 2.0
-depend: [Vault]
+version: 1.0.0
+api-version: 1.15
 description: >
-             World protection, and global plot management plugin.
+   World protection, and global plot management plugin.
 commands:
-       plot:
-          description: Lets you do all plot commands and edit your plot.
-       shout:
-          description: Shouts a message.
-       whisper:
-          description: whispers a message. This is not the same as sending a message.
-       msg:
-          description: Sends a private message to a player.
-       me:
-          description: Sends an action message.
-       autobuy:
-          description: Lets you buy plots as you walk.
-       rank:
-          description: Shows the player his rank and play time.
-       home:
-          description: Teleports the player to their home location.
-       sethome:
-          description: Sets the player's home location.
-       cplot:
-          description: Same as plot, but for clustered plots.
-       aplot:
-          description: Same as plot, but for all plots.
-       kingdom:
-          description: Lets you all all kingdom commands and edit your kingdom.
-       gm:
-          description: Toggles your gamemode.
-       setgroup:
-          description: Sets a player's permissions group.
-       nickname:
-          description: Sets a player's nickname.
-       pvp:
-          description: Lets you toggle pvp for yourself.
+   plot:
+      description: Lets you do all plot commands and edit your plot.
+   shout:
+      description: Shouts a message.
+   whisper:
+      description: whispers a message. This is not the same as sending a message.
+   msg:
+      description: Sends a private message to a player.
+   me:
+      description: Sends an action message.
+   autobuy:
+      description: Lets you buy plots as you walk.
+   rank:
+      description: Shows the player his rank and play time.
+   home:
+      description: Teleports the player to their home location.
+   sethome:
+      description: Sets the player's home location.
+   cplot:
+      description: Same as plot, but for clustered plots.
+   aplot:
+      description: Same as plot, but for all plots.
+   kingdom:
+      description: Lets you all all kingdom commands and edit your kingdom.
+   gm:
+      description: Toggles your gamemode.
+   setgroup:
+      description: Sets a player's permissions group.
+   nickname:
+      description: Sets a player's nickname.
+   pvp:
+      description: Lets you toggle pvp for yourself.
