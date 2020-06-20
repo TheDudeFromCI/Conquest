@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -44,9 +45,6 @@ import me.ci.Conquest.Misc.ConquestTimer;
 import me.ci.Conquest.Misc.WikiTipPage;
 import me.ci.Conquest.Textures.ConquestTextures;
 import me.ci.Console.Console;
-import net.milkbowl.vault.chat.Chat;
-import net.milkbowl.vault.economy.Economy;
-import net.milkbowl.vault.permission.Permission;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -70,9 +68,6 @@ public class WhCommunity extends JavaPlugin
 	public static String CONFIG_Auto_Message_name;
 	public static int CONFIG_Restart_Minutes;
 	public static boolean CONFIG_Save_Conquest_To_Ram;
-	public static Economy economy;
-	public static Permission permission;
-	public static Chat chat;
 	public static FileConfiguration config;
 	public static boolean SHUTTING_DOWN = false;
 	public static int threads = 0;
@@ -218,7 +213,7 @@ public class WhCommunity extends JavaPlugin
 					{
 						try
 						{
-							final Player[] players = Bukkit.getOnlinePlayers();
+							final Collection<? extends Player> players = Bukkit.getOnlinePlayers();
 							final long time = System.currentTimeMillis();
 							for (Player p : players)
 							{
@@ -352,8 +347,8 @@ public class WhCommunity extends JavaPlugin
 			return;
 		System.out.println("[WhCommunity] Disabling plugin...");
 		System.out.println("[WhCommunity] Kicking players...");
-		Player[] players = Bukkit.getOnlinePlayers();
-		for (Player p : players.clone())
+		Collection<? extends Player> players = Bukkit.getOnlinePlayers();
+		for (Player p : players.toArray(new Player[players.size()]))
 		{
 			if (crash)
 				p.kickPlayer(
@@ -491,19 +486,20 @@ public class WhCommunity extends JavaPlugin
 	{
 		try
 		{
-			if (this.getServer()
-					.getPluginManager()
-					.getPlugin("Vault") != null)
-			{
-				RegisteredServiceProvider<Economy> economyProvider = getServer().getServicesManager()
-																				.getRegistration(
-																						net.milkbowl.vault.economy.Economy.class);
-				if (economyProvider != null)
-					economy = economyProvider.getProvider();
-				return economy != null;
-			}
-			else
-				return false;
+			// if (this.getServer()
+			// .getPluginManager()
+			// .getPlugin("Vault") != null)
+			// {
+			// RegisteredServiceProvider<Economy> economyProvider =
+			// getServer().getServicesManager()
+			// .getRegistration(
+			// net.milkbowl.vault.economy.Economy.class);
+			// if (economyProvider != null)
+			// economy = economyProvider.getProvider();
+			// return economy != null;
+			// }
+			// else
+			return false;
 		}
 		catch (Exception e)
 		{
@@ -530,19 +526,20 @@ public class WhCommunity extends JavaPlugin
 	{
 		try
 		{
-			if (this.getServer()
-					.getPluginManager()
-					.getPlugin("Vault") != null)
-			{
-				RegisteredServiceProvider<Permission> permissionProvider = getServer()	.getServicesManager()
-																						.getRegistration(
-																								net.milkbowl.vault.permission.Permission.class);
-				if (permissionProvider != null)
-					permission = permissionProvider.getProvider();
-				return (permission != null);
-			}
-			else
-				return false;
+			// if (this.getServer()
+			// .getPluginManager()
+			// .getPlugin("Vault") != null)
+			// {
+			// RegisteredServiceProvider<Permission> permissionProvider = getServer()
+			// .getServicesManager()
+			// .getRegistration(
+			// net.milkbowl.vault.permission.Permission.class);
+			// if (permissionProvider != null)
+			// permission = permissionProvider.getProvider();
+			// return (permission != null);
+			// }
+			// else
+			return false;
 		}
 		catch (Exception e)
 		{
@@ -554,19 +551,20 @@ public class WhCommunity extends JavaPlugin
 	{
 		try
 		{
-			if (this.getServer()
-					.getPluginManager()
-					.getPlugin("Vault") != null)
-			{
-				RegisteredServiceProvider<Chat> chatProvider = getServer()	.getServicesManager()
-																			.getRegistration(
-																					net.milkbowl.vault.chat.Chat.class);
-				if (chatProvider != null)
-					chat = chatProvider.getProvider();
-				return (chat != null);
-			}
-			else
-				return false;
+			// if (this.getServer()
+			// .getPluginManager()
+			// .getPlugin("Vault") != null)
+			// {
+			// RegisteredServiceProvider<Chat> chatProvider = getServer()
+			// .getServicesManager()
+			// .getRegistration(
+			// net.milkbowl.vault.chat.Chat.class);
+			// if (chatProvider != null)
+			// chat = chatProvider.getProvider();
+			// return (chat != null);
+			// }
+			// else
+			return false;
 		}
 		catch (Exception e)
 		{
@@ -576,22 +574,24 @@ public class WhCommunity extends JavaPlugin
 
 	public static boolean moneyEnabled()
 	{
-		return WhCommunity.economy != null;
+		return false;
+		// return WhCommunity.economy != null;
 	}
 
 	public static void takeMoney(String player, double amount)
 	{
-		WhCommunity.economy.withdrawPlayer(player, amount);
+		// WhCommunity.economy.withdrawPlayer(player, amount);
 	}
 
 	public static void giveMoney(String player, double amount)
 	{
-		WhCommunity.economy.depositPlayer(player, amount);
+		// WhCommunity.economy.depositPlayer(player, amount);
 	}
 
 	public static boolean hasMoney(String player, double amount)
 	{
-		return WhCommunity.economy.getBalance(player) >= amount;
+		// return WhCommunity.economy.getBalance(player) >= amount;
+		return false;
 	}
 
 	public static void printDebug()
